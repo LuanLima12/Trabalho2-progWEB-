@@ -11,8 +11,43 @@
 
     <style>
 
+      /*body {
+        margin: 0;
+        padding: 0;
+        font-family: verdana;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }*/
+
       #centro {
         height: 88%;
+      }
+
+      #ghost {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      #ghost li {
+        list-style: none;
+        color: #fff;
+        font-size: 6em;
+        font-weight: bold;
+        letter-spacing: 10px;
+        filter: blur(1px);
+        transition: 4s;
+      }
+
+      #ghost li:hover,
+      #ghost li:hover ~ li {
+        transform:rotate(90deg) translateY(-200px) ;
+        transition: 2s;
+        filter: blur(20px);
+        opacity: 0;
       }
 
     </style>
@@ -51,9 +86,43 @@
       </div>
     </nav>
 
-    <div id="centro">
+    <main role="main">
 
-    </div>
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron" style="background-color: 	#363636;">
+          <ul id="ghost">
+            <li>a</li>
+            <li>m</li>
+            <li>i</li>
+            <li>L</li>
+            <li> . </li>
+            <li>n</li>
+            <li>a</li>
+            <li>u</li>
+            <li>L</li>
+          </ul>
+
+        <h1>
+          bORA ORA ORA ORA
+          ORA ORA ORA ORA
+          ORA ORA ORA ORA
+          ORA ORA ORA ORA
+          ORA ORA ORA ORA
+          ORA ORA ORA ORA
+          ORA ORA ORA ORA
+          ORA ORA ORA ORA
+          ORA ORA ORA ORA
+          ORA ORA ORA ORA
+          ORA ORA ORA ORA
+          ORA ORA ORA ORA
+          
+        </h1>
+    
+        <hr>
+    
+      </div> <!-- /container -->
+    
+    </main>
     
     <div style="padding-left: 120px; padding-right: 120px;">
       <hr>
