@@ -3,6 +3,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1" 
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -25,17 +26,22 @@
         height: 88%;
       }
 
+      #fantasma{
+        padding-right: 200px;
+      }
+
       #ghost {
         margin: 0;
         padding: 0;
         display: flex;
         flex-direction: row-reverse;
+        text-align: center;
       }
 
       #ghost li {
         list-style: none;
         color: #fff;
-        font-size: 6em;
+        font-size: 4em;
         font-weight: bold;
         letter-spacing: 10px;
         filter: blur(1px);
@@ -47,7 +53,71 @@
         transform:rotate(90deg) translateY(-200px) ;
         transition: 2s;
         filter: blur(20px);
-        opacity: 0;
+        opacity: 0; 
+      }
+
+      .box{
+        position: relative;
+        width: 300px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px;
+        transition: 0.5s;
+      }
+
+      .box:hover {
+        height: 400px;
+      }
+
+      .box .imgBx {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .box .imgBx img {
+        max-width: 100%;
+        opacity: 0.1;
+        transition: 0.5s;
+      }
+
+      .box:hover .imgBx img 
+      {
+        opacity: 1;
+      }
+
+      .box:before{
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: #fff;
+        z-index: -1;
+      }
+
+      .box:after{
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: #fff;
+        z-index: -2;
+        filter: blur(40px);
+      }
+
+      .box:before,
+      .box:after {
+        background: linear-gradient(235deg, #1C1C1C, #708090, #fff );
       }
 
     </style>
@@ -89,34 +159,29 @@
     <main role="main">
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron" style="background-color: 	#363636;">
-          <ul id="ghost">
-            <li>a</li>
-            <li>m</li>
-            <li>i</li>
-            <li>L</li>
-            <li> . </li>
-            <li>n</li>
-            <li>a</li>
-            <li>u</li>
-            <li>L</li>
-          </ul>
+      <div class="jumbotron" style="background-color: 	#1C1C1C;">
+          <div id="fantasma">
+            <ul id="ghost">
+              <li>a</li>
+              <li>m</li>
+              <li>i</li>
+              <li>L</li>
+              <li> . </li>
+              <li>n</li>
+              <li>a</li>
+              <li>u</li>
+              <li>L</li>
+            </ul>
+          </div>    
 
-        <h1>
-          bORA ORA ORA ORA
-          ORA ORA ORA ORA
-          ORA ORA ORA ORA
-          ORA ORA ORA ORA
-          ORA ORA ORA ORA
-          ORA ORA ORA ORA
-          ORA ORA ORA ORA
-          ORA ORA ORA ORA
-          ORA ORA ORA ORA
-          ORA ORA ORA ORA
-          ORA ORA ORA ORA
-          ORA ORA ORA ORA
-          
-        </h1>
+        <div class="box">
+          <div class="imgBx">
+            <img src="eu.png" height=" 300">
+          </div>
+          <div class="content">
+            <h2>Luan Lima</h2>
+          </div>
+        </div>
     
         <hr>
     
