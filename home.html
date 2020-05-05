@@ -25,6 +25,16 @@
       p {
         color: #fff;
         text-align: left;
+        text-shadow: #fff 4px 8px 6px;
+      }
+
+      a {
+        color: #fff;
+        font-weight: bolder;
+      }
+
+      a:hover {
+        color: 	#8B0000	;
       }
 
       #direita {
@@ -64,6 +74,16 @@
         transition: 2s;
         filter: blur(20px);
         opacity: 0; 
+      }
+
+      .jumbotron a {
+        text-shadow: #fff 4px 8px 6px;
+        filter: blur(1px);
+      }
+
+      .jumbotron a:hover {
+        filter: none;
+        text-shadow: #8B0000 4px 8px 6px;
       }
 
       .box{
@@ -135,8 +155,9 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Navbar</a>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top"
+    style="background-image: linear-gradient(to bottom, #fff, #1c1c1c)">
+      <a class="navbar-brand" href="#"><img src="LL.png" height="40px" width="40px"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -169,7 +190,8 @@
     <main role="main">
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron" style="background-color: 	#1C1C1C;">
+      <div class="jumbotron" style="background-image: linear-gradient(to bottom, #141414, #1b1b1b); 
+      margin-bottom: 0px;">
           <div id="fantasma">
             <ul id="ghost">
               <li>a</li>
@@ -194,12 +216,32 @@
              <br>
              <br>
              <div style="float: left;">  
-                <ul type="none" style="text-align: left;">
-                  <li><img>Instagram</li>
-                  <br>
-                  <li><img>Whatsapp</li>
+                <p>Redes sociais:</p>
+                <ul type="none" >
+                  <li><img src="instagram.png" height="20px" width="20px"><a href="https://www.instagram.com/luanlima8532/">  instagram</a></li>
                 </ul>
             </div>
+            <div style="float: right;">
+                <p>Hobbies:</p>
+                <ul type="none">
+                  <li><a href="https://drive.google.com/open?id=1EKLVuZF8L9Gk0F-Yb47VuJ2oI7jtN7LN">HQ</a></li>
+                  <br>
+                  <li><a href="https://drive.google.com/drive/folders/1Mr4sdl06PVwTDKazNg2N-OyIytFpDPIb?usp=sharing">Desenhos</a></li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+              <p>Citação favorita <strike>atualmente</strike>:</p>
+              <p>"Eu não vou te salvar, apenas irei dar uma mãozinha, só você pode se salvar"</p>
+              <p style="text-align: right;"> Oshino Meme (Monogatari)</p>
+            </div>
+
+
           </div>
 
         <div class="box">
@@ -213,19 +255,20 @@
 
         
     
-        <hr>
+      
     
       </div> <!-- /container -->
     
-    </main>
     
-    <div style="padding-left: 120px; padding-right: 120px;">
-      <hr>
-    </div>
+    </main>
+        
+  <div id="cor" style="background-image: linear-gradient(to bottom, #1c1c1c, #fff);">
 
-    <footer class="container">
-      <p style="text-align: center;">https://github.com/LuanLima12/Trabalho2-progWEB-.git</p>
+    <footer class="container" style="text-align: right; padding-bottom: 10px;">
+      <img src="github-logo.png" height="20px" width="20px">
+      <a href="https://github.com/LuanLima12/Trabalho2-progWEB-.git">github</a>
     </footer>
+  </div>
 
 
     <!-- Optional JavaScript -->
