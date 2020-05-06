@@ -1,18 +1,17 @@
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="viewpoint" content="width=device-width, initial-scale=1" 
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewpoint" content="width=device-width, initial-scale=1" <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+  <title>Sr. Lima</title>
 
-    <style>
-
-      /*body {
+  <style>
+    /*body {
         margin: 0;
         padding: 0;
         font-family: verdana;
@@ -22,246 +21,254 @@
         height: 100vh;
       }*/
 
-      p {
-        color: #fff;
-        text-align: left;
-        text-shadow: #fff 4px 8px 6px;
-      }
+    p {
+      color: #fff;
+      text-align: left;
+      text-shadow: #fff 4px 8px 6px;
+    }
 
-      a {
-        color: #fff;
-        font-weight: bolder;
-      }
+    a {
+      color: #fff;
+      font-weight: bolder;
+    }
 
-      a:hover {
-        color: 	#8B0000	;
-      }
+    a:hover {
+      color: #8B0000;
+    }
 
-      #direita {
-        width: 600px;
-        padding-right: 150px;
-      }
+    #direita {
+      width: 600px;
+      padding-right: 150px;
+    }
 
-      #centro {
-        height: 88%;
-      }
+    #centro {
+      height: 88%;
+    }
 
-      #fantasma{
-        padding-right: 200px;
-      }
+    #fantasma {
+      padding-right: 200px;
+    }
 
-      #ghost {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: row-reverse;
-        text-align: center;
-      }
+    #ghost {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row-reverse;
+      text-align: center;
+    }
 
-      #ghost li {
-        list-style: none;
-        color: #fff;
-        font-size: 4em;
-        font-weight: bold;
-        letter-spacing: 10px;
-        filter: blur(1px);
-        transition: 4s;
-      }
+    #ghost li {
+      list-style: none;
+      color: #fff;
+      font-size: 4em;
+      font-weight: bold;
+      letter-spacing: 10px;
+      filter: blur(1px);
+      transition: 4s;
+    }
 
-      #ghost li:hover,
-      #ghost li:hover ~ li {
-        transform:rotate(90deg) translateY(-200px) ;
-        transition: 2s;
-        filter: blur(20px);
-        opacity: 0; 
-      }
+    #ghost li:hover,
+    #ghost li:hover~li {
+      transform: rotate(90deg) translateY(-200px);
+      transition: 2s;
+      filter: blur(20px);
+      opacity: 0;
+    }
 
-      .jumbotron a {
-        text-shadow: #fff 4px 8px 6px;
-        filter: blur(1px);
-      }
+    .jumbotron a {
+      text-shadow: #fff 4px 8px 6px;
+      filter: blur(1px);
+    }
 
-      .jumbotron a:hover {
-        filter: none;
-        text-shadow: #8B0000 4px 8px 6px;
-      }
+    .jumbotron a:hover {
+      filter: none;
+      text-shadow: #8B0000 4px 8px 6px;
+    }
 
-      .box{
-        position: relative;
-        width: 300px;
-        height: 300px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 40px;
-        transition: 0.5s;
-      }
+    .box {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 40px;
+      transition: 0.5s;
+    }
 
-      .box:hover {
-        height: 400px;
-      }
+    .box:hover {
+      height: 400px;
+    }
 
-      .box .imgBx {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-      }
+    .box .imgBx {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
 
-      .box .imgBx img {
-        max-width: 100%;
-        opacity: 0.1;
-        transition: 0.5s;
-      }
+    .box .imgBx img {
+      max-width: 100%;
+      opacity: 0.1;
+      transition: 0.5s;
+    }
 
-      .box:hover .imgBx img 
-      {
-        opacity: 1;
-      }
+    .box:hover .imgBx img {
+      opacity: 1;
+    }
 
-      .box:before{
-        content: '';
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        bottom: -2px;
-        background: #fff;
-        z-index: -1;
-      }
+    .box:before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: #fff;
+      z-index: -1;
+    }
 
-      .box:after{
-        content: '';
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        bottom: -2px;
-        background: #fff;
-        z-index: -2;
-        filter: blur(40px);
-      }
+    .box:after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: #fff;
+      z-index: -2;
+      filter: blur(40px);
+    }
 
-      .box:before,
-      .box:after {
-        background: linear-gradient(235deg, #1C1C1C, #708090, #fff );
-      }
+    .box:before,
+    .box:after {
+      background: linear-gradient(235deg, #1C1C1C, #708090, #fff);
+    }
+  </style>
 
-    </style>
+</head>
 
-  </head>
-  <body>
+<body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top"
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top"
     style="background-image: linear-gradient(to bottom, #fff, #1c1c1c)">
-      <a class="navbar-brand" href="#"><img src="LL.png" height="40px" width="40px"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <!--<li class="nav-item">
+    <a class="navbar-brand" href="#"><img src="LL.png" height="40px" width="40px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <!--<li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </li>-->
-          <div class="espaco"></div>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Questões</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">1º questão</a>
-              <a class="dropdown-item" href="#">2º questão</a>
-              <a class="dropdown-item" href="#">3º questão</a>
-              <a class="dropdown-item" href="#">4º questão</a>
-            </div>
-          </li>
+        <div class="espaco"></div>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Questões</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="quest1.html">1º questão</a>
+            <a class="dropdown-item" href="quest2.html">2º questão</a>
+            <a class="dropdown-item" href="quest3.html">3º questão</a>
+            <a class="dropdown-item" href="quest4.html">4º questão</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" style="background-image: linear-gradient(to bottom, #141414, #1b1b1b); 
+      margin-bottom: 0px;">
+      <div id="fantasma">
+        <ul id="ghost">
+          <li>a</li>
+          <li>m</li>
+          <li>i</li>
+          <li>L</li>
+          <li> . </li>
+          <li>n</li>
+          <li>a</li>
+          <li>u</li>
+          <li>L</li>
         </ul>
       </div>
-    </nav>
 
-    <main role="main">
-
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron" style="background-image: linear-gradient(to bottom, #141414, #1b1b1b); 
-      margin-bottom: 0px;">
-          <div id="fantasma">
-            <ul id="ghost">
-              <li>a</li>
-              <li>m</li>
-              <li>i</li>
-              <li>L</li>
-              <li> . </li>
-              <li>n</li>
-              <li>a</li>
-              <li>u</li>
-              <li>L</li>
-            </ul>
-          </div>  
-          
-          <div id="direita" style="float: right;" >
+      <div id="direita" style="float: right;">
+        <br>
+        <br>
+        <p>Aluno de: Analise e desenvolvimento de softwares</p>
+        <br>
+        <div style="float: left;">
+          <p style="text-align: left;">3º semestre. Unileão</p>
+        </div>
+        <div style="float:right">
+          <p style="text-align: right;">19 anos de idade</p>
+        </div>
+        <br>
+        <br>
+        <div style="float: left;">
+          <p>Redes sociais:</p>
+          <ul type="none">
+            <li><img src="instagram.png" height="20px" width="20px"><a href="https://www.instagram.com/luanlima8532/">
+                instagram</a></li>
+          </ul>
+        </div>
+        <div style="float: right;">
+          <p>Hobbies:</p>
+          <ul type="none">
+            <li><a href="https://drive.google.com/open?id=1EKLVuZF8L9Gk0F-Yb47VuJ2oI7jtN7LN">HQ</a></li>
             <br>
-            <br>
-            <p>Aluno de: Analise e desenvolvimento de softwares</p>
-            <br>
-             <div style="float: left;">   <p style="text-align: left;">3º semestre. Unileão</p>  </div>
-             <div style="float:right"> <p style="text-align: right;">19 anos de idade</p> </div>
-             <br>
-             <br>
-             <div style="float: left;">  
-                <p>Redes sociais:</p>
-                <ul type="none" >
-                  <li><img src="instagram.png" height="20px" width="20px"><a href="https://www.instagram.com/luanlima8532/">  instagram</a></li>
-                </ul>
-            </div>
-            <div style="float: right;">
-                <p>Hobbies:</p>
-                <ul type="none">
-                  <li><a href="https://drive.google.com/open?id=1EKLVuZF8L9Gk0F-Yb47VuJ2oI7jtN7LN">HQ</a></li>
-                  <br>
-                  <li><a href="https://drive.google.com/drive/folders/1Mr4sdl06PVwTDKazNg2N-OyIytFpDPIb?usp=sharing">Desenhos</a></li>
-                </ul>
-            </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div>
-              <p>Citação favorita <strike>atualmente</strike>:</p>
-              <p>"Eu não vou te salvar, apenas irei dar uma mãozinha, só você pode se salvar"</p>
-              <p style="text-align: right;"> Oshino Meme (Monogatari)</p>
-            </div>
-
-
-          </div>
-
-        <div class="box">
-          <div class="imgBx">
-            <img src="eu.png" height=" 300">
-          </div>
-          <div class="content">
-            <h2>Luan Lima</h2>
-          </div>
+            <li><a
+                href="https://drive.google.com/drive/folders/1Mr4sdl06PVwTDKazNg2N-OyIytFpDPIb?usp=sharing">Desenhos</a>
+            </li>
+          </ul>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>
+          <p>Citação favorita <strike>atualmente</strike>:</p>
+          <p>"Eu não vou te salvar, apenas irei dar uma mãozinha, só você pode se salvar"</p>
+          <p style="text-align: right;"> Oshino Meme (Monogatari)</p>
         </div>
 
-        
-    
-      
-    
-      </div> <!-- /container -->
-    
-    
-    </main>
-        
+
+      </div>
+
+      <div class="box">
+        <div class="imgBx">
+          <img src="eu.png" height=" 300">
+        </div>
+        <div class="content">
+          <h2>Luan Lima</h2>
+        </div>
+      </div>
+
+
+
+
+
+    </div> <!-- /container -->
+
+
+  </main>
+
   <div id="cor" style="background-image: linear-gradient(to bottom, #1c1c1c, #fff);">
 
     <footer class="container" style="text-align: right; padding-bottom: 10px;">
@@ -271,10 +278,17 @@
   </div>
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

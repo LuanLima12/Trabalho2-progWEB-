@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>1º Questão</title>
+
+    <style>
+        main {
+            background-image: linear-gradient(to bottom, #141414, #1b1b1b);
+        }
+
+        .jumbotron {
+            height: 88%;
+        }
+    </style>
+
+    <script>
+        var nome;
+        function nome() { }
+    </script>
+
+</head>
+
+<body>
+
+    <body>
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top"
+            style="background-image: linear-gradient(to bottom, #fff, #1c1c1c)">
+            <a class="navbar-brand" href="home.html"><img src="LL.png" height="40px" width="40px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Questões</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="quest1.html">1º questão</a>
+                            <a class="dropdown-item" href="quest2.html">2º questão</a>
+                            <a class="dropdown-item" href="quest3.html">3º questão</a>
+                            <a class="dropdown-item" href="quest4.html">4º questão</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main">
+
+            <!-- Main jumbotron for a primary marketing message or call to action -->
+            <div class="jumbotron" style="background-image: linear-gradient(to bottom, #141414, #1b1b1b); 
+                margin-bottom: 0px;">
+
+                <form name="calcular_media">
+                    <div class="form-group">
+                        <label for="nome">Nome do aluno</label>
+                        <input type="text" class="form-control" id="nome">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="disciplina">Nome da disciplina</label>
+                        <input type="text" class="form-control" id="disciplina">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nota1">1º nota</label>
+                        <input type="number" class="form-control" id="nota1" min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nota2">2º nota</label>
+                        <input type="number" class="form-control" id="nota2" min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mini">media necessária para passar</label>
+                        <input type="number" class="form-control" id="mini" min="0">
+                    </div>
+
+                    <button onclick="media()" type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+
+                <script>
+                    function media() {
+                        var nome = calcular_media.nome.value;
+                        var disc = calcular_media.disciplina.value;
+                        var nota1 = calcular_media.nota1.value;
+                        var nota2 = calcular_media.nota2.value;
+                        var mini = calcular_media.mini.value;
+                        media = (parseFloat(nota1) + parseFloat(nota2)) / 2;
+                        alert(nome + "," + disc + "," + nota1 + "," + nota2 + "," + media)
+                        if (media<mini){
+                            var situ="Reprovado!"
+                        }
+                        else{
+                            var situ="Aprovado!"
+                        }
+
+                        document.write("<br>Nome do aluno: "+nome);
+                        document.write("<br>Nome da matéria: "+disc);
+                        document.write("<br>1º nota: "+nota1);
+                        document.write("<br>2ºnota: "+nota2);
+                        document.write("<br>Situação: "+situ);
+
+                        /*document.write("<table class='table'>")
+                        document.write(" <thead class='thead-dark'>")
+                        document.write("  <tr>")
+                        document.write("   <th scope='col'>Aluno</th>")
+                        document.write("   <th scope='col'>Disciplina</th>")
+                        document.write("   <th scope='col'>1º nota</th>")
+                        document.write("   <th scope='col'>2º nota</th>")
+                        document.write("   <th scope='col'>media</th>")
+                        document.write("  </tr>")
+                        document.write(" </thead>")
+                        document.write(" <tbody>")
+                        document.write("  <tr>")
+                        document.write("   <th scope='row'>1</th>")
+                        document.write("   <td>Mark</td>")
+                        document.write("   <td>Otto</td>")
+                        document.write("   <td>@mdo</td>")
+                        document.write("  </tr>")
+                        document.write(" </tbody>")
+                        document.write("</table>")*/
+                    }
+                </script>
+
+
+
+            </div> <!-- /container -->
+
+
+        </main>
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>
