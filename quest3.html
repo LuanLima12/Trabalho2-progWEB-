@@ -97,7 +97,6 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron" style="background-image: linear-gradient(to bottom, #141414, #1b1b1b); 
                 margin-bottom: 0px;">
-                <h2 style="text-align: center;">Calcular média</h2>
                 <div style="padding: 0px 300px 0px 300px;">
                     <form name="calcular_media">
                         <div class="form-group">
@@ -125,64 +124,14 @@
                             <input type="number" class="form-control" id="mini" min="0">
                         </div>
 
-                        <button onclick="media()" type="button" class="btn btn-primary">Submit</button>
+                        <button onclick="media()" type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
 
 
                 <script>
-                    function media() {
-                        var nome = calcular_media.nome.value;
-                        var disc = calcular_media.disciplina.value;
-                        var nota1 = calcular_media.nota1.value;
-                        var nota2 = calcular_media.nota2.value;
-                        var mini = calcular_media.mini.value;
-                        media = (parseFloat(nota1) + parseFloat(nota2)) / 2;
-                        alert(nome + "," + disc + "," + nota1 + "," + nota2 + "," + media)
-                        if (media < mini) {
-                            var situ = "Reprovado!"
-                        }
-                        else {
-                            var situ = "Aprovado!"
-                        }
-
-                        document.getElementById("nom").innerHTML = (nome);
-                        document.getElementById("disc").innerHTML = (disc);
-                        document.getElementById("no1").innerHTML = (nota1);
-                        document.getElementById("no2").innerHTML = (nota2);
-                        document.getElementById("media").innerHTML = (media);
-                        document.getElementById("situ").innerHTML = (situ);
-
-
-                    }
                 </script>
-                <br><br><br>
 
-                <div id="tabela">
-                    <table class='table'>
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope='col'>Aluno</th>
-                                <th scope='col'>Disciplina</th>
-                                <th scope='col'>1º nota</th>
-                                <th scope='col'>2º nota</th>
-                                <th scope='col'>Média</th>
-                                <th scope='col'>Situação</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <!-- <th scope='row'id="nome"></th>-->
-                                <td id="nom"></td>
-                                <td id="disc"></td>
-                                <td id="no1"></td>
-                                <td id="no2"></td>
-                                <td id="media"></td>
-                                <td id="situ"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
 
 
             </div> <!-- /container -->

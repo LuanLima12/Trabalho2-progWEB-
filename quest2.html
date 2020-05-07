@@ -49,6 +49,18 @@
             padding: 0px 300px 0px 300px;
         }
 
+        #algum {
+            width: 370px;
+        }
+
+        #algum2 {
+            width: 100px;
+        }
+
+        #algum3 {
+            width: 250px;
+        }
+
         .jumbotron {
             height: 88%;
         }
@@ -97,92 +109,83 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron" style="background-image: linear-gradient(to bottom, #141414, #1b1b1b); 
                 margin-bottom: 0px;">
-                <h2 style="text-align: center;">Calcular média</h2>
                 <div style="padding: 0px 300px 0px 300px;">
-                    <form name="calcular_media">
-                        <div class="form-group">
-                            <label for="nome">Nome do aluno</label>
+                    <form name="gerar_carne">
+                        <div class="class=" form-control form-control-sm"">
+                            <label for="nome">Nome do cliente</label>
                             <input type="text" class="form-control" id="nome">
                         </div>
 
-                        <div class="form-group">
-                            <label for="disciplina">Nome da disciplina</label>
-                            <input type="text" class="form-control" id="disciplina">
+                        <div class="form-row" style="padding-left: 5px;">
+                            <div class="form-group" id="algum" style="margin-right: 65px;">
+                                <label for="produto">Produto</label>
+                                <input type="text" class="form-control" id="produto">
+                            </div>
+
+                            <div class="form-group" style="margin-left: 65px;">
+                                <label for="valor">Valor do produto</label>
+                                <input type="number" class="form-control" id="valor" min="0">
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="nota1">1º nota</label>
-                            <input type="number" class="form-control" id="nota1" min="0">
+                        <div class="form-group" id="algum2">
+                            <label for="quantidade">Quantidade</label>
+                            <input type="number" class="form-control" id="quantidade" min="0">
                         </div>
 
-                        <div class="form-group">
-                            <label for="nota2">2º nota</label>
-                            <input type="number" class="form-control" id="nota2" min="0">
+                        <div class="form-group" id="algum3">
+                            <label for="parcelas">quantidade de parcelas</label>
+                            <input type="number" class="form-control" id="parcelas" min="0" max="6"
+                                placeholder="Maximo de 6 parcelas">
                         </div>
 
-                        <div class="form-group">
-                            <label for="mini">media necessária para passar</label>
-                            <input type="number" class="form-control" id="mini" min="0">
-                        </div>
-
-                        <button onclick="media()" type="button" class="btn btn-primary">Submit</button>
+                        <button onclick="carne()" type="button" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
 
 
                 <script>
-                    function media() {
-                        var nome = calcular_media.nome.value;
-                        var disc = calcular_media.disciplina.value;
-                        var nota1 = calcular_media.nota1.value;
-                        var nota2 = calcular_media.nota2.value;
-                        var mini = calcular_media.mini.value;
-                        media = (parseFloat(nota1) + parseFloat(nota2)) / 2;
-                        alert(nome + "," + disc + "," + nota1 + "," + nota2 + "," + media)
-                        if (media < mini) {
-                            var situ = "Reprovado!"
+
+                    function carne() {
+                        cliente = gerar_carne.nome.value;
+                        produto = gerar_carne.produto.value;
+                        valor = gerar_carne.valor.value;
+                        quant = gerar_carne.quantidade.value;
+                        parc = gerar_carne.parcelas.value;
+
+                        if (parc==3) {
+                            valor = (valor * 0.05);
                         }
-                        else {
-                            var situ = "Aprovado!"
+                        else if (parc==4){
+                            valor = (valor * 0.05);
+                        }
+                        else if (parc==5){
+                            valor = (valor * 0.05);
+                        }
+                        else if (parc == 6) {
+                            valor = (valor * 0.12)
                         }
 
-                        document.getElementById("nom").innerHTML = (nome);
-                        document.getElementById("disc").innerHTML = (disc);
-                        document.getElementById("no1").innerHTML = (nota1);
-                        document.getElementById("no2").innerHTML = (nota2);
-                        document.getElementById("media").innerHTML = (media);
-                        document.getElementById("situ").innerHTML = (situ);
+                       /* for (i = 1; i <= parc; i++) {
 
+                            document.write("<p class='black' style='text-align:center;'>LuEletros!</p><br>");
+                            document.write("<br> <p class='black'>CLIENTE: </p><p>" + cliente + "</p>");
+                            document.write("<br> <p class='black'>PRODUTO: </p><p>" + produto + "</p>");
+                            document.write("<br> <p class='black'>VALOR: </p><p>" + valor + "</p> <p>---------</p><p>PARCELA: " + i + "/" + parc);
 
+                        }*/
+                        document.getElementById("carne").innerHTML = (for (i = 1; i <= parc; i++) {
+
+                            document.write("<p class='black' style='text-align:center;'>LuEletros!</p><br>");
+                            document.write("<br> <p class='black'>CLIENTE: </p><p>" + cliente + "</p>");
+                            document.write("<br> <p class='black'>PRODUTO: </p><p>" + produto + "</p>");
+                            document.write("<br> <p class='black'>VALOR: </p><p>" + valor + "</p> <p>---------</p><p>PARCELA: " + i + "/" + parc);
+
+                        });
                     }
-                </script>
-                <br><br><br>
 
-                <div id="tabela">
-                    <table class='table'>
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope='col'>Aluno</th>
-                                <th scope='col'>Disciplina</th>
-                                <th scope='col'>1º nota</th>
-                                <th scope='col'>2º nota</th>
-                                <th scope='col'>Média</th>
-                                <th scope='col'>Situação</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <!-- <th scope='row'id="nome"></th>-->
-                                <td id="nom"></td>
-                                <td id="disc"></td>
-                                <td id="no1"></td>
-                                <td id="no2"></td>
-                                <td id="media"></td>
-                                <td id="situ"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                </script>
+
 
 
             </div> <!-- /container -->
