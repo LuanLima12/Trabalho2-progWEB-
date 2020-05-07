@@ -13,6 +13,12 @@
     <title>1º Questão</title>
 
     <style>
+
+        p {
+            color: #fff;
+            text-shadow: #fff 4px 8px 6px;
+        }
+
         tr {
             color: #fff;
             text-shadow: #696969 4px 8px 20px;
@@ -117,12 +123,12 @@
                         </div>
 
                         <div class="form-row" style="padding-left: 5px;">
-                            <div class="form-group" id="algum" style="margin-right: 65px;">
+                            <div class="form-group" id="algum" style="margin-right: 50px;">
                                 <label for="produto">Produto</label>
                                 <input type="text" class="form-control" id="produto">
                             </div>
 
-                            <div class="form-group" style="margin-left: 65px;">
+                            <div class="form-group" style="margin-left: 60px;">
                                 <label for="valor">Valor do produto</label>
                                 <input type="number" class="form-control" id="valor" min="0">
                             </div>
@@ -130,12 +136,12 @@
 
                         <div class="form-group" id="algum2">
                             <label for="quantidade">Quantidade</label>
-                            <input type="number" class="form-control" id="quantidade" min="0">
+                            <input type="number" class="form-control" id="quantidade" min="1">
                         </div>
 
                         <div class="form-group" id="algum3">
                             <label for="parcelas">quantidade de parcelas</label>
-                            <input type="number" class="form-control" id="parcelas" min="0" max="6"
+                            <input type="number" class="form-control" id="parcelas" min="1" max="6"
                                 placeholder="Maximo de 6 parcelas">
                         </div>
 
@@ -166,27 +172,40 @@
                             valor = (valor * 0.12)
                         }
 
-                       /* for (i = 1; i <= parc; i++) {
+                        for (i = 1; i <= parc; i++) {
 
-                            document.write("<p class='black' style='text-align:center;'>LuEletros!</p><br>");
+                           /* document.write("<p class='black' style='text-align:center;'>LuEletros!</p><br>");
                             document.write("<br> <p class='black'>CLIENTE: </p><p>" + cliente + "</p>");
                             document.write("<br> <p class='black'>PRODUTO: </p><p>" + produto + "</p>");
                             document.write("<br> <p class='black'>VALOR: </p><p>" + valor + "</p> <p>---------</p><p>PARCELA: " + i + "/" + parc);
+                                */
 
-                        }*/
-                        document.getElementById("carne").innerHTML = (for (i = 1; i <= parc; i++) {
+                            document.getElementById("linha"+i).innerHTML = ("<p class='black' style='text-align:center'>===============================================================</p><br><p class='black' style='text-align:center;'>LuEletros!</p><br><br> <p class='black' style='text-align:center;''>CLIENTE: " + cliente + "</p> <p class='black' style='text-align:center;'>PRODUTO: " + produto + "</p> <p class='black' style='text-align:center;'>VALOR: " + valor + "</p> <p style='text-align:center';>PARCELA: " + i + "/" + parc+"<p class='black' style='text-align:center'>===============================================================</p>");
 
-                            document.write("<p class='black' style='text-align:center;'>LuEletros!</p><br>");
-                            document.write("<br> <p class='black'>CLIENTE: </p><p>" + cliente + "</p>");
-                            document.write("<br> <p class='black'>PRODUTO: </p><p>" + produto + "</p>");
-                            document.write("<br> <p class='black'>VALOR: </p><p>" + valor + "</p> <p>---------</p><p>PARCELA: " + i + "/" + parc);
+                        }
 
-                        });
                     }
 
                 </script>
 
-
+                    <div classe="folhinha">
+                        <p id="linha1"></p>
+                    </div>
+                    <div classe="folhinha">
+                        <p id="linha2"></p>
+                    </div>
+                    <div classe="folhinha">
+                        <p id="linha3"></p>
+                    </div>
+                    <div classe="folhinha">
+                        <p id="linha4"></p>
+                    </div>
+                    <div classe="folhinha">
+                        <p id="linha5"></p>
+                    </div>
+                    <div classe="folhinha">
+                        <p id="linha6"></p>
+                    </div>
 
             </div> <!-- /container -->
 

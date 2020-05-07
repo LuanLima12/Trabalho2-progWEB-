@@ -100,28 +100,20 @@
                 <div style="padding: 0px 300px 0px 300px;">
                     <form name="calcular_media">
                         <div class="form-group">
-                            <label for="nome">Nome do aluno</label>
+                            <label for="nome">Nome</label>
                             <input type="text" class="form-control" id="nome">
                         </div>
 
-                        <div class="form-group">
-                            <label for="disciplina">Nome da disciplina</label>
-                            <input type="text" class="form-control" id="disciplina">
-                        </div>
+                        <div class="form-row" style="padding-left: 5px;">
+                            <div class="form-group" id="algum" style="margin-right: 50px;">
+                                <label for="produto">Salario</label>
+                                <input type="text" class="form-control" id="produto">
+                            </div>
 
-                        <div class="form-group">
-                            <label for="nota1">1º nota</label>
-                            <input type="number" class="form-control" id="nota1" min="0">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="nota2">2º nota</label>
-                            <input type="number" class="form-control" id="nota2" min="0">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mini">media necessária para passar</label>
-                            <input type="number" class="form-control" id="mini" min="0">
+                            <div class="form-group" style="margin-left: 60px;">
+                                <label for="valor">Cargo</label>
+                                <input type="number" class="form-control" id="valor" min="0">
+                            </div>
                         </div>
 
                         <button onclick="media()" type="submit" class="btn btn-primary">Submit</button>
