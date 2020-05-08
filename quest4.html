@@ -154,12 +154,12 @@
                         <div class="form-row" style="padding-left: 5px;">
                             <div class="form-group" style="padding-right: 30px; width: 150px;">
                                 <label for="peso">Peso</label>
-                                <input required type="number" step="0.00" class="form-control" id="peso">
+                                <input required type="number" step="0.00" class="form-control" id="peso" placeholder="Em kg">
                             </div>
 
                             <div class="form-group" style="padding-right: 30px; width: 150px;">
                                 <label for="altura">Altura</label>
-                                <input required type="number" step="0.00" class="form-control" id="altura" min="0">
+                                <input required type="number" step="0.00" class="form-control" id="altura" min="0" placeholder="em metros">
                             </div>
                         </div>
                         <br>
@@ -179,20 +179,64 @@
 
                         var imc = parseFloat(peso) / parseFloat(alt2);
 
-                        if (imc < 18.5) {
+                        if (imc > 5 && imc < 18.5) {
                             var situ = "Baixo peso."
                             var msg = "Peso baixo para a altura. Maior probabilidade de anorexia."
+                            var cor = azul;
                         }
-                        else if (imc > 18.5 & imc < 24.9) {
+                        else if (imc >= 18.5 && imc < 24.9) {
                             var situ = "Peso normal."
                             var msg = "Maior probabilidade de ser um indivíduo saudável."
+                            var cor = verde;
+                        }
+                        else if (imc >= 25 && imc < 29.9) {
+                            var situ = "Pré-obesidade."
+                            var msg = "Alguma probabilidade de problemas de saúde. Predisposição a tornar-se obeso."
+                            var cor = amarelo;
+                        }
+                        else if (imc >= 30 && imc < 34.9) {
+                            var situ = "Obesidade grau I."
+                            var msg = "Risco moderado de diabetes tipo II, hipertensão, colesterol e cardiopatia."
+                            var cor = laranja;
+                        }
+                        else if (imc >= 35 && imc < 39.9) {
+                            var situ = "Obesidade grau II."
+                            var msg = "Risco grave. Aumenta o risco de doenças associadas. O risco de mortalidade aumenta em 50%." 
+                            var cor = vermelho;
+                        }
+                        else if (imc < 5) {
+                            var situ = "censurado"
+                            var msg = "De frente parece que ta de lado e de lado parece que já foi embora!" 
+                            var cor = branco;
+                        }
+                        else {
+                            var situ = "Obesidade grau III."
+                            var msg = "Risco muito grave. O risco de doenças associadas, bem como a mortalidade, aumentam em 90%."
+                            var cor = mortal;
                         }
 
-                        alert(nome + altura + peso + alt2 + imc + msg);
+                        //alert(nome + altura + peso + alt2 + imc + msg);
+                        document.getElementById("nom").innerHTML=(nome);
+                        document.getElementById("pes").innerHTML = (peso);
+                        document.getElementById("alt").innerHTML = (altura);
+                        document.getElementById("imc").innerHTML = (imc);
+                        document.getElementById("situ").innerHTML = (situ);
+                        document.getElementById("msg").innerHTML = (msg);
+                        document.getElementById(cor+".png").innerHTML = (cor);
                     }
 
                 </script>
-
+                    <div class="folhinha"><br>
+                        <p>RESULTADO</p>
+                        <br>
+                        <p>Paciente: <i id="nom"></i></p>
+                        <p>Peso: <i id="pes"></i>kg</p>
+                        <p>Altura: <i id="alt"></i>m </p>
+                        <p>I.M.C.: <i id="imc"></i> </p>
+                        <p>Situação: <i id="situ"></i> </p>
+                        <p>Aviso: <i id="msg"></i>  </p> 
+                    </div>
+                       
 
 
             </div> <!-- /container -->
