@@ -102,27 +102,27 @@
                     <form name="calcular_media">
                         <div class="form-group">
                             <label for="nome">Nome do aluno</label>
-                            <input type="text" class="form-control" id="nome">
+                            <input required type="text" class="form-control" id="nome">
                         </div>
 
                         <div class="form-group">
                             <label for="disciplina">Nome da disciplina</label>
-                            <input type="text" class="form-control" id="disciplina">
+                            <input required type="text" class="form-control" id="disciplina">
                         </div>
 
                         <div class="form-group">
                             <label for="nota1">1º nota</label>
-                            <input type="number" class="form-control" id="nota1" min="0">
+                            <input required type="number" class="form-control" id="nota1" min="0">
                         </div>
 
                         <div class="form-group">
                             <label for="nota2">2º nota</label>
-                            <input type="number" class="form-control" id="nota2" min="0">
+                            <input required type="number" class="form-control" id="nota2" min="0">
                         </div>
 
                         <div class="form-group">
                             <label for="mini">media necessária para passar</label>
-                            <input type="number" class="form-control" id="mini" min="0">
+                            <input required type="number" class="form-control" id="mini" min="0">
                         </div>
 
                         <button onclick="media()" type="button" class="btn btn-primary">Submit</button>

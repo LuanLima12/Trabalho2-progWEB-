@@ -13,6 +13,12 @@
     <title>1º Questão</title>
 
     <style>
+        p {
+            color: #fff;
+            text-align: left;
+            text-shadow: #fff 4px 8px 6px;
+        }
+
         tr {
             color: #fff;
             text-shadow: #696969 4px 8px 20px;
@@ -98,33 +104,87 @@
             <div class="jumbotron" style="background-image: linear-gradient(to bottom, #141414, #1b1b1b); 
                 margin-bottom: 0px;">
                 <div style="padding: 0px 300px 0px 300px;">
-                    <form name="calcular_media">
+                    <form name="mostrar_salario">
                         <div class="form-group">
                             <label for="nome">Nome</label>
-                            <input type="text" class="form-control" id="nome">
+                            <input required type="text" class="form-control" id="nome">
                         </div>
 
                         <div class="form-row" style="padding-left: 5px;">
                             <div class="form-group" id="algum" style="margin-right: 50px;">
-                                <label for="produto">Salario</label>
-                                <input type="text" class="form-control" id="produto">
+                                <label for="salario">Salario</label>
+                                <input required type="number" step="0.00" class="form-control" id="salario">
                             </div>
 
-                            <div class="form-group" style="margin-left: 60px;">
-                                <label for="valor">Cargo</label>
-                                <input type="number" class="form-control" id="valor" min="0">
+                            <div class="input-group">
+                                <select required class="custom-select" id="cargo"
+                                    aria-label="Example select with button addon">
+                                    <option value="Atendente">Atendente</option>
+                                    <option value="Estoquista">Estoquista</option>
+                                    <option value="Gerente">Gerente</option>
+                                </select>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button"
+                                        onclick="mostrar()">Exibir</button>
+                                </div>
                             </div>
+                            <button onclick="mostrar()" type="button" class="btn btn-primary">Submit</button>
+
                         </div>
 
-                        <button onclick="media()" type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
 
 
                 <script>
+                    function mostrar() {
+                        nom = mostrar_salario.nome.value;
+                        salario = mostrar_salario.salario.value;
+                        cargo = mostrar_salario.cargo.value;
+
+                        if (cargo == "Atendente") {
+                            var aumento = parseFloat(salario) * 0.08;
+                            var salariob = parseFloat(salario) + parseFloat(aumento);
+                        }
+                        else if (cargo == "Estoquista") {
+                           var aumento = parseFloat(salario) * 0.06;
+                           var salariob = parseFloat(salario) + parseFloat(aumento);
+                        }
+                        else {
+                           var aumento = parseFloat(salario) * 0.03;
+                           var salariob = parseFloat(salario) + parseFloat(aumento);
+                        }
+
+                        if (salariob < 1.045, 01) {
+                            var inss = parseFloat(salariob) * 0.075;
+                            var salariol = parseFloat(salariob) - parseFloat(inss);
+                        }
+                        else if (salariob > 2.089, 60) {
+                            var inss = parseFloat(salariob) * 0.12;
+                            var salariol = parseFloat(salariob) - parseFloat(inss);
+                        }
+                        else {
+                            var inss = parseFloat(salariob) * 0.09;
+                            var salariol = parseFloat(salariob) - parseFloat(inss);
+                        }
+
+                        document.getElementById("nom").innerHTML = (nom);
+                        document.getElementById("carg").innerHTML = (cargo);
+                        document.getElementById("salb").innerHTML = (salariob);
+                        document.getElementById("sall").innerHTML = (salariol);
+
+                        alert(nom + cargo + aumento + salariob + inss + salariol)
+                    }
                 </script>
+                <br> <br>
+                <div style="padding: 0px 300px 20px 300px;">
+                    <p style="text-align:center">Resultado:</p>
+                    <p>Nome: <i id="nom"></i></p>
+                    <p>Cargo: <i id="carg"></i> </p>
+                    <p>Salario bruto: <i id="salb"></i>R$</p>
+                    <p>Salario liquido: <i id="sall"></i>R$ </p>
 
-
+                </div>
 
             </div> <!-- /container -->
 
@@ -133,7 +193,7 @@
 
         <div id="cor" style="background-image: linear-gradient(to bottom, #1c1c1c, #fff);">
 
-            <footer class="container" style="text-align: right; padding-bottom: 10px;">
+            <footer class="container" style="text-align: center; padding-bottom: 10px;">
                 <img src="github-logo.png" height="20px" width="20px">
                 <a href="https://github.com/LuanLima12/Trabalho2-progWEB-.git">github</a>
             </footer>
