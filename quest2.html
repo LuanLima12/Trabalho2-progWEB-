@@ -10,13 +10,22 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>1º Questão</title>
+    <title>2º Questão</title>
 
     <style>
-
         p {
             color: #fff;
+            text-align: left;
             text-shadow: #fff 4px 8px 6px;
+        }
+
+        a {
+            color: #fff;
+            font-weight: bolder;
+        }
+
+        a:hover {
+            color: #8B0000;
         }
 
         tr {
@@ -70,6 +79,34 @@
         .jumbotron {
             height: 88%;
         }
+
+        /*botão*/
+        .myButton {
+            box-shadow: inset 0px 1px 0px 0px #000000;
+            background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+            background-color: #ededed;
+            border-radius: 6px;
+            border: 1px solid #000000;
+            display: inline-block;
+            cursor: pointer;
+            color: #777777;
+            font-family: Verdana;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 6px 24px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #ffffff;
+        }
+
+        .myButton:hover {
+            background: linear-gradient(to bottom, #800000 5%, #FA8072 100%);
+            background-color: #000000;
+        }
+
+        .myButton:active {
+            position: relative;
+            top: 1px;
+        }
     </style>
 
     <script>
@@ -115,9 +152,11 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron" style="background-image: linear-gradient(to bottom, #141414, #1b1b1b); 
                 margin-bottom: 0px;">
+                <br>
+                <h2 style="text-align: center;">Mostrar carnês</h2>
                 <div style="padding: 0px 300px 0px 300px;">
                     <form name="gerar_carne">
-                        <div class="class=" form-control form-control-sm"">
+                        <div class="class=" form-control form-control-sm>
                             <label for="nome">Nome do cliente</label>
                             <input required type="text" class="form-control" id="nome">
                         </div>
@@ -145,7 +184,7 @@
                                 placeholder="Maximo de 6 parcelas">
                         </div>
 
-                        <button onclick="carne()" type="button" class="btn btn-primary">Submit</button>
+                        <a onclick="carne()" class="myButton">Gerar</a>
                     </form>
                 </div>
 
@@ -153,59 +192,77 @@
                 <script>
 
                     function carne() {
-                        cliente = gerar_carne.nome.value;
-                        produto = gerar_carne.produto.value;
-                        valor = gerar_carne.valor.value;
-                        quant = gerar_carne.quantidade.value;
-                        parc = gerar_carne.parcelas.value;
+                        var nome = gerar_carne.nome.value;
+                        var produto = gerar_carne.produto.value;
+                        var valor = gerar_carne.valor.value;
+                        var quant = gerar_carne.quantidade.value;
+                        var parc = gerar_carne.parcelas.value;
 
-                        if (parc==3) {
-                            valor = (valor + valor * 0.05);
+                        if (parc == 3) {
+                            var juros = parseFloat(valor) * 0.05;
+                            var valorjuros = parseFloat(valor) + parseFloat(juros);
+                            var valortotal = parseFloat(valorjuros) * parseFloat(quant);
+                            var valorparce = parseFloat(valortotal) / parseFloat(parc);
                         }
-                        else if (parc==4){
-                            valor = (valor + valor * 0.05);
+                        else if (parc == 4) {
+                            var juros = parseFloat(valor) * 0.05;
+                            var valorjuros = parseFloat(valor) + parseFloat(juros);
+                            var valortotal = parseFloat(valorjuros) * parseFloat(quant);
+                            var valorparce = parseFloat(valortotal) / parseFloat(parc);
                         }
-                        else if (parc==5){
-                            valor = (valor + valor * 0.05);
+                        else if (parc == 5) {
+                            var juros = parseFloat(valor) * 0.05;
+                            var valorjuros = parseFloat(valor) + parseFloat(juros);
+                            var valortotal = parseFloat(valorjuros) * parseFloat(quant);
+                            var valorparce = parseFloat(valortotal) / parseFloat(parc);
                         }
                         else if (parc == 6) {
-                            valor = (valor + valor * 0.12)
+                            var juros = parseFloat(valor) * 0.12;
+                            var valorjuros = parseFloat(valor) + parseFloat(juros);
+                            var valortotal = parseFloat(valorjuros) * parseFloat(quant);
+                            var valorparce = parseFloat(valortotal) / parseFloat(parc);
+                        }
+                        else {
+                            var juros = 0;
+                            var valortotal = parseFloat(valor) * parseFloat(quant);
+                            var valorparce = parseFloat(valortotal) / parseFloat(parc);
                         }
 
                         for (i = 1; i <= parc; i++) {
 
-                           /* document.write("<p class='black' style='text-align:center;'>LuEletros!</p><br>");
-                            document.write("<br> <p class='black'>CLIENTE: </p><p>" + cliente + "</p>");
-                            document.write("<br> <p class='black'>PRODUTO: </p><p>" + produto + "</p>");
-                            document.write("<br> <p class='black'>VALOR: </p><p>" + valor + "</p> <p>---------</p><p>PARCELA: " + i + "/" + parc);
-                                */
+                            /* document.write("<p class='black' style='text-align:center;'>LuEletros!</p><br>");
+                             document.write("<br> <p class='black'>CLIENTE: </p><p>" + cliente + "</p>");
+                             document.write("<br> <p class='black'>PRODUTO: </p><p>" + produto + "</p>");
+                             document.write("<br> <p class='black'>VALOR: </p><p>" + valor + "</p> <p>---------</p><p>PARCELA: " + i + "/" + parc);
+                                 */
 
-                            document.getElementById("linha"+i).innerHTML = ("<p class='black' style='text-align:center'>===============================================================</p><br><p class='black' style='text-align:center;'>LuEletros!</p><br><br> <p class='black' style='text-align:center;''>CLIENTE: " + cliente + "</p> <p class='black' style='text-align:center;'>PRODUTO: " + produto + "</p> <p class='black' style='text-align:center;'>VALOR: " + valor + "</p> <p style='text-align:center';>PARCELA: " + i + "/" + parc+"<p class='black' style='text-align:center'>===============================================================</p>");
+                            document.getElementById("linha" + i).innerHTML = ("<p class='black' style='text-align:center'>===============================================================</p><br><p class='black' style='text-align:center;'>LuEletros!</p><br><br> <p class='black' style='text-align:center;''>CLIENTE: " + nome + "</p> <p class='black' style='text-align:center;'>PRODUTO: " + produto + "</p> <p class='black' style='text-align:center;'>VALOR TOTAL: " + valortotal + "</p> <p style='text-align:center';>VALOR DA PARCELA: " + valorparce + "</p> <p style='text-align:center';>PARCELA: " + i + "/" + parc + "<p class='black' style='text-align:center'>===============================================================</p>");
 
                         }
+                        //alert(valor+","+valorf+","+valorb+","+val);
 
                     }
 
                 </script>
 
-                    <div classe="folhinha">
-                        <p id="linha1"></p>
-                    </div>
-                    <div classe="folhinha">
-                        <p id="linha2"></p>
-                    </div>
-                    <div classe="folhinha">
-                        <p id="linha3"></p>
-                    </div>
-                    <div classe="folhinha">
-                        <p id="linha4"></p>
-                    </div>
-                    <div classe="folhinha">
-                        <p id="linha5"></p>
-                    </div>
-                    <div classe="folhinha">
-                        <p id="linha6"></p>
-                    </div>
+                <div classe="folhinha">
+                    <p id="linha1"></p>
+                </div>
+                <div classe="folhinha">
+                    <p id="linha2"></p>
+                </div>
+                <div classe="folhinha">
+                    <p id="linha3"></p>
+                </div>
+                <div classe="folhinha">
+                    <p id="linha4"></p>
+                </div>
+                <div classe="folhinha">
+                    <p id="linha5"></p>
+                </div>
+                <div classe="folhinha">
+                    <p id="linha6"></p>
+                </div>
 
             </div> <!-- /container -->
 
@@ -214,9 +271,9 @@
 
         <div id="cor" style="background-image: linear-gradient(to bottom, #1c1c1c, #fff);">
 
-            <footer class="container" style="text-align: right; padding-bottom: 10px;">
+            <footer class="container" style="text-align: center; padding-bottom: 10px;">
                 <img src="github-logo.png" height="20px" width="20px">
-                <a href="https://github.com/LuanLima12/Trabalho2-progWEB-.git">github</a>
+                <a href="https://github.com/LuanLima12/Trabalho2-progWEB-.git " target="_blank" style="text-align: center;">github</a>
             </footer>
         </div>
 

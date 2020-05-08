@@ -10,9 +10,24 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>1º Questão</title>
+    <title>4º Questão</title>
 
     <style>
+        p {
+            color: #fff;
+            text-align: left;
+            text-shadow: #fff 4px 8px 6px;
+        }
+
+        a {
+            color: #fff;
+            font-weight: bolder;
+        }
+
+        a:hover {
+            color: #8B0000;
+        }
+
         tr {
             color: #fff;
             text-shadow: #696969 4px 8px 20px;
@@ -39,6 +54,7 @@
         h2 {
             color: #fff;
             text-shadow: #fff 4px 8px 6px;
+            text-align: center;
         }
 
         main {
@@ -51,6 +67,34 @@
 
         .jumbotron {
             height: 88%;
+        }
+
+        /*botão*/
+        .myButton {
+            box-shadow: inset 0px 1px 0px 0px #000000;
+            background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+            background-color: #ededed;
+            border-radius: 6px;
+            border: 1px solid #000000;
+            display: inline-block;
+            cursor: pointer;
+            color: #777777;
+            font-family: Verdana;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 6px 24px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #ffffff;
+        }
+
+        .myButton:hover {
+            background: linear-gradient(to bottom, #800000 5%, #FA8072 100%);
+            background-color: #000000;
+        }
+
+        .myButton:active {
+            position: relative;
+            top: 1px;
         }
     </style>
 
@@ -97,39 +141,56 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron" style="background-image: linear-gradient(to bottom, #141414, #1b1b1b); 
                 margin-bottom: 0px;">
+                <br>
+                <h2>Calcular Índice</h2><br>
+                <h2> de massa corporal</h2><br><br>
                 <div style="padding: 0px 300px 0px 300px;">
-                    <form name="calcular_media">
+                    <form name="calcular_imc">
                         <div class="form-group">
-                            <label for="nome">Nome do aluno</label>
-                            <input type="text" class="form-control" id="nome">
+                            <label for="nome">Nome do paciente</label>
+                            <input required type="text" class="form-control" id="nome">
                         </div>
 
-                        <div class="form-group">
-                            <label for="disciplina">Nome da disciplina</label>
-                            <input type="text" class="form-control" id="disciplina">
-                        </div>
+                        <div class="form-row" style="padding-left: 5px;">
+                            <div class="form-group" style="padding-right: 30px; width: 150px;">
+                                <label for="peso">Peso</label>
+                                <input required type="number" step="0.00" class="form-control" id="peso">
+                            </div>
 
-                        <div class="form-group">
-                            <label for="nota1">1º nota</label>
-                            <input type="number" class="form-control" id="nota1" min="0">
+                            <div class="form-group" style="padding-right: 30px; width: 150px;">
+                                <label for="altura">Altura</label>
+                                <input required type="number" step="0.00" class="form-control" id="altura" min="0">
+                            </div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="nota2">2º nota</label>
-                            <input type="number" class="form-control" id="nota2" min="0">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mini">media necessária para passar</label>
-                            <input type="number" class="form-control" id="mini" min="0">
-                        </div>
-
-                        <button onclick="media()" type="submit" class="btn btn-primary">Submit</button>
+                        <br>
+                        <a onclick="imc()" class="myButton">Calcular</a>
                     </form>
                 </div>
 
 
                 <script>
+
+                    function imc() {
+                        var nome = calcular_imc.nome.value;
+                        var peso = calcular_imc.peso.value;
+                        var altura = calcular_imc.altura.value;
+
+                        var alt2 = parseFloat(altura) * parseFloat(altura);
+
+                        var imc = parseFloat(peso) / parseFloat(alt2);
+
+                        if (imc < 18.5) {
+                            var situ = "Baixo peso."
+                            var msg = "Peso baixo para a altura. Maior probabilidade de anorexia."
+                        }
+                        else if (imc > 18.5 & imc < 24.9) {
+                            var situ = "Peso normal."
+                            var msg = "Maior probabilidade de ser um indivíduo saudável."
+                        }
+
+                        alert(nome + altura + peso + alt2 + imc + msg);
+                    }
+
                 </script>
 
 
@@ -141,9 +202,9 @@
 
         <div id="cor" style="background-image: linear-gradient(to bottom, #1c1c1c, #fff);">
 
-            <footer class="container" style="text-align: right; padding-bottom: 10px;">
+            <footer class="container" style="text-align: center; padding-bottom: 10px;">
                 <img src="github-logo.png" height="20px" width="20px">
-                <a href="https://github.com/LuanLima12/Trabalho2-progWEB-.git">github</a>
+                <a href="https://github.com/LuanLima12/Trabalho2-progWEB-.git" target="_blank">github</a>
             </footer>
         </div>
 

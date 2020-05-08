@@ -13,6 +13,21 @@
     <title>1º Questão</title>
 
     <style>
+        p {
+            color: #fff;
+            text-align: left;
+            text-shadow: #fff 4px 8px 6px;
+        }
+
+        a {
+            color: #fff;
+            font-weight: bolder;
+        }
+
+        a:hover {
+            color: #8B0000;
+        }
+
         tr {
             color: #fff;
             text-shadow: #696969 4px 8px 20px;
@@ -51,6 +66,34 @@
 
         .jumbotron {
             height: 88%;
+        }
+
+        /*botão*/
+        .myButton {
+            box-shadow: inset 0px 1px 0px 0px #000000;
+            background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+            background-color: #ededed;
+            border-radius: 6px;
+            border: 1px solid #000000;
+            display: inline-block;
+            cursor: pointer;
+            color: #777777;
+            font-family: Verdana;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 6px 24px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #ffffff;
+        }
+
+        .myButton:hover {
+            background: linear-gradient(to bottom, 	#800000 5%, #FA8072 100%);
+            background-color: #000000;
+        }
+
+        .myButton:active {
+            position: relative;
+            top: 1px;
         }
     </style>
 
@@ -107,25 +150,25 @@
 
                         <div class="form-group">
                             <label for="disciplina">Nome da disciplina</label>
-                            <input required type="text" class="form-control" id="disciplina">
+                            <input type="text" class="form-control" id="disciplina" required>
                         </div>
 
                         <div class="form-group">
                             <label for="nota1">1º nota</label>
-                            <input required type="number" class="form-control" id="nota1" min="0">
+                            <input type="number" class="form-control" id="nota1" min="0" required>
                         </div>
 
                         <div class="form-group">
                             <label for="nota2">2º nota</label>
-                            <input required type="number" class="form-control" id="nota2" min="0">
+                            <input type="number" class="form-control" id="nota2" min="0" required>
                         </div>
 
                         <div class="form-group">
                             <label for="mini">media necessária para passar</label>
-                            <input required type="number" class="form-control" id="mini" min="0">
+                            <input type="number" class="form-control" id="mini" min="0" required>
                         </div>
-
-                        <button onclick="media()" type="button" class="btn btn-primary">Submit</button>
+                        <a onclick="media()" class="myButton">Calcular</a>
+                         <!--<button onclick="media()" type="button" class="btn btn-primary">Submit</button>-->
                     </form>
                 </div>
 
@@ -138,7 +181,7 @@
                         var nota2 = calcular_media.nota2.value;
                         var mini = calcular_media.mini.value;
                         media = (parseFloat(nota1) + parseFloat(nota2)) / 2;
-                        alert(nome + "," + disc + "," + nota1 + "," + nota2 + "," + media)
+                        //alert(nome + "," + disc + "," + nota1 + "," + nota2 + "," + media)
                         if (media < mini) {
                             var situ = "Reprovado!"
                         }
@@ -192,9 +235,9 @@
 
         <div id="cor" style="background-image: linear-gradient(to bottom, #1c1c1c, #fff);">
 
-            <footer class="container" style="text-align: right; padding-bottom: 10px;">
+            <footer class="container" style="text-align: center; padding-bottom: 10px;">
                 <img src="github-logo.png" height="20px" width="20px">
-                <a href="https://github.com/LuanLima12/Trabalho2-progWEB-.git">github</a>
+                <a href="https://github.com/LuanLima12/Trabalho2-progWEB-.git" target="_blank">github</a>
             </footer>
         </div>
 

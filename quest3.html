@@ -10,13 +10,22 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>1º Questão</title>
+    <title>3º Questão</title>
 
     <style>
         p {
             color: #fff;
             text-align: left;
             text-shadow: #fff 4px 8px 6px;
+        }
+
+        a {
+            color: #fff;
+            font-weight: bolder;
+        }
+
+        a:hover {
+            color: #8B0000;
         }
 
         tr {
@@ -45,6 +54,7 @@
         h2 {
             color: #fff;
             text-shadow: #fff 4px 8px 6px;
+            text-align: center;
         }
 
         main {
@@ -57,6 +67,34 @@
 
         .jumbotron {
             height: 88%;
+        }
+
+        /*botão*/
+        .myButton {
+            box-shadow: inset 0px 1px 0px 0px #000000;
+            background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+            background-color: #ededed;
+            border-radius: 6px;
+            border: 1px solid #000000;
+            display: inline-block;
+            cursor: pointer;
+            color: #777777;
+            font-family: Verdana;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 6px 24px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #ffffff;
+        }
+
+        .myButton:hover {
+            background: linear-gradient(to bottom, #800000 5%, #FA8072 100%);
+            background-color: #000000;
+        }
+
+        .myButton:active {
+            position: relative;
+            top: 1px;
         }
     </style>
 
@@ -103,6 +141,8 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron" style="background-image: linear-gradient(to bottom, #141414, #1b1b1b); 
                 margin-bottom: 0px;">
+                <br>
+                <h2>Calcular Salário</h2>
                 <div style="padding: 0px 300px 0px 300px;">
                     <form name="mostrar_salario">
                         <div class="form-group">
@@ -125,10 +165,9 @@
                                 </select>
                                 <div class="input-group-append">
                                     <button class="btn btn-outline-secondary" type="button"
-                                        onclick="mostrar()">Exibir</button>
                                 </div>
                             </div>
-                            <button onclick="mostrar()" type="button" class="btn btn-primary">Submit</button>
+                            <!-- <button onclick="mostrar()" type="button" class="btn btn-primary">Submit</button>-->
 
                         </div>
 
@@ -147,12 +186,12 @@
                             var salariob = parseFloat(salario) + parseFloat(aumento);
                         }
                         else if (cargo == "Estoquista") {
-                           var aumento = parseFloat(salario) * 0.06;
-                           var salariob = parseFloat(salario) + parseFloat(aumento);
+                            var aumento = parseFloat(salario) * 0.06;
+                            var salariob = parseFloat(salario) + parseFloat(aumento);
                         }
                         else {
-                           var aumento = parseFloat(salario) * 0.03;
-                           var salariob = parseFloat(salario) + parseFloat(aumento);
+                            var aumento = parseFloat(salario) * 0.03;
+                            var salariob = parseFloat(salario) + parseFloat(aumento);
                         }
 
                         if (salariob < 1.045, 01) {
@@ -173,7 +212,7 @@
                         document.getElementById("salb").innerHTML = (salariob);
                         document.getElementById("sall").innerHTML = (salariol);
 
-                        alert(nom + cargo + aumento + salariob + inss + salariol)
+                        //alert(nom + cargo + aumento + salariob + inss + salariol)
                     }
                 </script>
                 <br> <br>
@@ -195,7 +234,7 @@
 
             <footer class="container" style="text-align: center; padding-bottom: 10px;">
                 <img src="github-logo.png" height="20px" width="20px">
-                <a href="https://github.com/LuanLima12/Trabalho2-progWEB-.git">github</a>
+                <a href="https://github.com/LuanLima12/Trabalho2-progWEB-.git" target="_blank">github</a>
             </footer>
         </div>
 
